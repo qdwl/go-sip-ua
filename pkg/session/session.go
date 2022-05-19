@@ -46,7 +46,7 @@ func NewInviteSession(reqcb RequestCallback, uaType string,
 		contact:        contact,
 	}
 
-	s.logger = utils.NewLogrusLogger(log.DebugLevel, "Session", nil)
+	s.logger = utils.NewLogrusLogger(log.InfoLevel, "Session", nil)
 
 	to, _ := req.To()
 	from, _ := req.From()

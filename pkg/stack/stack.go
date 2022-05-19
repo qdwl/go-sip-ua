@@ -134,12 +134,12 @@ func NewSipStack(config *SipStackConfig) *SipStack {
 	}
 
 	s.log = logger
-	s.tp = transport.NewLayer(ip, dnsResolver, config.MsgMapper, utils.NewLogrusLogger(log.DebugLevel, "transport.Layer", nil))
+	s.tp = transport.NewLayer(ip, dnsResolver, config.MsgMapper, utils.NewLogrusLogger(log.InfoLevel, "transport.Layer", nil))
 	sipTp := &sipTransport{
 		tpl: s.tp,
 		s:   s,
 	}
-	s.tx = transaction.NewLayer(sipTp, utils.NewLogrusLogger(log.DebugLevel, "transaction.Layer", nil))
+	s.tx = transaction.NewLayer(sipTp, utils.NewLogrusLogger(log.InfoLevel, "transaction.Layer", nil))
 
 	s.running.Set()
 	go s.serve()
