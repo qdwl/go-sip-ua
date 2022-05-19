@@ -78,7 +78,7 @@ func NewSipStack(config *SipStackConfig) *SipStack {
 		config = &SipStackConfig{}
 	}
 
-	logger := utils.NewLogrusLogger(log.DebugLevel, "SipStack", nil)
+	logger := utils.NewLogrusLogger(log.InfoLevel, "SipStack", nil)
 
 	var host string
 	var ip net.IP
