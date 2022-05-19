@@ -28,8 +28,8 @@ type SessionKey struct {
 // NewSessionKey - Build a Session Key quickly
 func NewSessionKey(callID sip.CallID, branchID sip.MaybeString) SessionKey {
 	return SessionKey{
-		CallID:   callID,
-		BranchID: branchID,
+		CallID: callID,
+		// BranchID: branchID,
 	}
 }
 
